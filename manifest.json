@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+
+  "author": "Corncob",
+  "name": "Corncob Music Downloader",
+  "current_locale":"vi",
+  "homepage_url": "http://daiyen.info",
+  "short_name": "Mp3 Downloader",
+  "description": "Hỗ trợ tải bài hát và album chất lượng cao trên ZingMp3 và Nhaccuatui ",
+  "version": "1.0",
+  "content_scripts": [ {
+      "js": [ "data/jquery.min.js", "data/core.js" ],
+      "matches": ["http://mp3.zing.vn/chu-de/*",
+                  "http://mp3.zing.vn/bai-hat/*",
+                  "http://mp3.zing.vn/album/*",
+                  "http://www.nhaccuatui.com/bai-hat/*",
+                  "http://www.nhaccuatui.com/playlist/*",
+                  "http://mp3.zing.vn/bang-xep-hang/*"]
+   } ],
+  "background": { "page":"background.html" },
+
+  "icons": {"24":"icons/icon24.png",
+            "48":"icons/icon48.png",
+            "64":"icons/icon64.png",
+            "128":"icons/icon128.png"},
+
+  "page_action": {
+    "default_icon": "icons/icon24.png",
+    "default_title": "Download"
+
+  },
+  "permissions": [
+    "activeTab","tabs","http://mp3.zing.vn/*", "http://www.nhaccuatui.com/*"
+  ]
+}
